@@ -4,7 +4,7 @@ Flutter project.
 
 ## 코드
 
-아래는 'main.dart' 코드임
+아래는 'main.dart' 코드
 
 ```dart
 import 'package:flutter/material.dart';

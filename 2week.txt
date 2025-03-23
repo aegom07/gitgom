@@ -1,0 +1,89 @@
+void main() {
+  var n = 10;
+  var result = "";
+
+  for (var y = 0; y < n; y++) {
+    for (var x = 0; x < n; x++) {
+      result += "*";
+    }
+    result += "\n";
+  }
+  print(result);
+  result = "";
+
+  for (var y = 0; y < n; y++) {
+    for (var x = 0; x < n; x++) {
+      var c = y == 0 || y == n - 1 || x == 0 || x == n - 1 || y == x;
+      if (c) {
+        result += "*";
+      } else {
+        result += " ";
+      }
+    }
+    result += "\n";
+  }
+  print(result);
+  result = "";
+
+  for (var y = 0; y < n; y++) {
+    for (var x = 0; x < n; x++) {
+      var c = y == 0 || y == n - 1 || x == 0 || x == n - 1 || y == n - x - 1;
+      if (c) {
+        result += "*";
+      } else {
+        result += " ";
+      }
+    }
+    result += "\n";
+  }
+  print(result);
+
+  for (var y = 0; y < n; y++) {
+    for (var x = 0; x < n; x++) {
+      var c =
+          y == 0 ||
+          y == n - 1 ||
+          x == 0 ||
+          x == n - 1 ||
+          y == n - x - 1 ||
+          y == x;
+      if (c) {
+        result += "*";
+      } else {
+        result += " ";
+      }
+    }
+    result += "\n";
+  }
+  print(result);
+}
+
+/*
+요일 출력
+*/
+/*
+void main() {
+  String tDate = '2025-03-15'; 
+  DateTime date = DateTime.parse(tDate);
+  
+  List<String> week = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+  
+  print('$tDate 는 ${week[date.weekday - 1]} 입니다.');
+}
+/*
+구구단 출력
+*/
+void main() {
+  for (var i = 2; i < 10; i++) {
+    //단 출력
+    printDan(i);
+    print('');//단이 끝날때 줄바꿈
+  }
+}
+
+void printDan(int dan) { //1~9까지 증감
+  for (var j = 1; j <= 9; j++) {
+    print('$dan*$j=${dan * j}');
+  }
+}
+*/

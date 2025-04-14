@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          children: [
+            // 결과 화면 영역
+            Expanded(
+              flex: 2,
+              child: Container(
+                color: Colors.black,
+                alignment: Alignment.bottomRight,
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  '0',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            // 버튼 영역
+            Expanded(
+              flex: 5,
+              child: Column(
+                children: [
+                  _buildButtonRow(['C', '±', '%', '÷'], Colors.grey),
+                  _buildButtonRow(['7', '8', '9', '×'], Colors.blueGrey),
+                  _buildButtonRow(['4', '5', '6', '−'], Colors.blueGrey),
+                  _buildButtonRow(['1', '2', '3', '+'], Colors.blueGrey),
+                  _buildButtonRow(['0', '.', '='], Colors.blueGrey, isLastRow: true),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildButtonRow(List<String> labels, Color color, {bool isLastRow = false}) {
+    return Expanded(
+      child: Row(
+        children: labels.map((label) {
+          return Expanded(
+            flex: (isLastRow && label == '0') ? 2 : 1, // '0'은 넓게
+            child: Container(
+              margin: EdgeInsets.all(2),
+              color: color,
+              child: Center(
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}

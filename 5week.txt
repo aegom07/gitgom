@@ -1,0 +1,108 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              // 첫 번째 행
+              Expanded(
+                flex: 1,
+                child: Row(
+                  children: [
+                    // 빨간색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.red,
+                      ),
+                    ),
+                    // 파란색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.blue,
+                      ),
+                    ),
+                    // 파란색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // 두 번째 행
+              Expanded(
+                flex: 1,
+                child: Row(
+                  children: [
+                    // 빨간색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.red,
+                      ),
+                    ),
+                    // 검은색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.black,
+                      ),
+                    ),
+                    // 오렌지색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.orange,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // 세 번째 행 (노란색)
+              Expanded(
+                flex: 1,
+                child: Row(
+                  children: [
+                    // 노란색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    // 노란색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    // 노란색
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
